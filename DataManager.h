@@ -1,5 +1,5 @@
 #ifndef DataManager_h
-#define Datamanager_h
+#define DataManager_h
 #include <string>
 #include <vector>
 #include "Measure.h"
