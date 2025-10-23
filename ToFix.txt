@@ -3,6 +3,6 @@
 
 
 
-Vissa menyval, om tomma, visar inte att dom är helt tomma utan skriver ut en pointer???
-Fixa om du hinner
-Lägg till save file och load file funktion, ifstream/ofstream!
+Vissa menyval, om tomma, visar inte att dom är helt tomma utan skriver ut en pointer??? (VET EJ HUR JAG SKA FIXA, BUFFER OVERFLOW??)
+
+Lägg till save file och load file funktion, ifstream/ofstream! KLAR
