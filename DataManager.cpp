@@ -7,14 +7,13 @@
 
 using namespace std;
 
-//Logik för funktioner. Då det används en vektor nu så måste vissa saker ändras
-//Testa logiken och se hur mycket som måste ändras.
 
 void DataManager::Add_Value() {
     double val;
     cout << "Ange ett värde: ";
     cin >> val;
 
+    //Om input från användare är ogiltig
     if (!cin) {
         cout << "Ogiltig inmatning" << '\n';
         cin.clear();
@@ -105,6 +104,7 @@ void DataManager::Calc_StdDev(double &StDev) {
     StDev = 0.0;
     double var;
     Calc_Var(var);
+    //Tar variansen från tidigare funktion och tar sedan kvadratroten ur variansen.
     StDev = sqrt(var);
 }
 
@@ -126,6 +126,8 @@ void DataManager::Sort_Func_Desc() {
         cout << "Inga värden i listan";
         return;
     }
+    //Pekar på start och slut av vektor, anger start och slut, använder sedan en Lambda funktion som gör att sort ska jämföra element a och b.
+    //std::sort loopar sedan tills alla element är i rätt ordning.
     std::sort(data.begin(), data.end(), [](const Measurement &a, const Measurement &b) {
         return a.value > b.value;
     });
@@ -137,14 +139,13 @@ void DataManager::Search_Func() {
         cout << "Inga värden i listan";
         return;
     }
-    //Kanske använder search() funktionen istället
-    //(https://www.w3schools.com/cpp/ref_algorithm_search.asp), källa.
+
+    //(https://www.w3schools.com/cpp/ref_algorithm_search.asp)
     double search;
     cout << "Sök efter ett värde: ";
     cin >> search;
 
-    //Borde kunna använda for const auto istället för gamla metoden.
-    //klurar på det sen om jag hinner.
+    //Programmet går igenom listan, om värdet finns i listan, så blir find true och användare får veta att den är i listan
     bool find = false;
     for (size_t i = 0; i < data.size(); ++i) {
         if (data[i].value == search) {
@@ -189,6 +190,6 @@ void DataManager::Load_File() {
         data.push_back(m);
     }
     file.close();
-    cout << "Värdet" << data.size() << " lagrat" << '\n';
+    //cout << "Värdet" << data.size() << " lagrat" << '\n';
 }
 

@@ -4,8 +4,10 @@
 #include <vector>
 #include "Measure.h"
 
-//Här är klassen som hanterar listan, Lägger in gamla funktioner med tid
-//Här deklareras alla funktioner, logiken ska vara i cpp filen.
+//Här är klassen som hanterar mätdata
+//Här deklareras alla funktioner.
+//Alla mätvärden lagras i en vector(Measurment är mätvärden)
+
 class DataManager {
     private:
         std::vector<Measurement> data;
