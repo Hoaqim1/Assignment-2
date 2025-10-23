@@ -1,1 +1,7 @@
-//Här ska jag troligtvis bara deklarera menu funktionen för att göra mitt liv lättare
+#ifndef menu_h
+#define menu_h
+#include "DataManager.h"
+
+void Menu(DataManager &manager);
+
+#endif

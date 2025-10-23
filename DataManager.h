@@ -8,20 +8,20 @@
 //Här deklareras alla funktioner, logiken ska vara i cpp filen.
 class DataManager {
     private:
-        std::vector<Measure> data;
+        std::vector<Measurement> data;
     
     public:
-        void Add_Value(double, const std::string&);
-        void Show_Value(double, const std::string&);
+        void Add_Value();
+        void Show_Value();
         void Calc_Sum(double &);
         void Calc_Avg(double &);
         void Calc_Min(double &);
         void Calc_Max(double &);
         void Calc_Var(double &);
-        void calc_StdDev(double &);
+        void Calc_StdDev(double &);
         void Sort_Func_Asc();
         void Sort_Func_Desc();
-        void Search_Func(double);
+        void Search_Func();
     
 
 };
