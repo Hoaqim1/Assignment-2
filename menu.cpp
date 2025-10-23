@@ -33,7 +33,7 @@ void Menu(DataManager &manager) {
         cout << "Ogiltig inmatning" << '\n';
         cin.clear();
         cin.ignore(1000, '\n');
-        return; //Fortsätter vidare i do while loop
+        continue; //Fortsätter vidare i do while loop
 
     }
         //Menyval hanteras här
@@ -81,6 +81,7 @@ void Menu(DataManager &manager) {
         cout << '\n'; 
         break;
     case 10:
+        manager.Save_File();
         cout << "Programmet Avslutas...";
         return;
     default:

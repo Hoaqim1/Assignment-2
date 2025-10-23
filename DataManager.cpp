@@ -3,6 +3,7 @@
 #include <ctime>
 #include <cmath>
 #include <algorithm>
+#include <fstream>
 
 using namespace std;
 
@@ -27,6 +28,7 @@ void DataManager::Add_Value() {
     
     time_t now = std::time(nullptr);
     m.timestamp = std::ctime(&now);
+    m.timestamp.pop_back();
     data.push_back(m);
 }
 
@@ -38,7 +40,7 @@ void DataManager::Show_Value() {
 
     for (size_t i = 0; i < data.size(); i++)
     {
-        cout << data[i].timestamp << data[i].value << '\n';
+        cout << data[i].timestamp << " : " << data[i].value << '\n';
     }
     
 }
@@ -153,6 +155,40 @@ void DataManager::Search_Func() {
     if (!find) {
         cout << "Värdet finns inte" << '\n';
     }
+}
 
+void DataManager::Save_File() {
+    //skapar eller öppnar fil
+    std::ofstream file("data.txt"); 
+    //om det inte går att öppna filen
+    if (!file) {
+        cout << "Går ej att spara filen" << '\n';
+        return;
+    }
+
+    for (const auto &m : data) {
+        file << m.timestamp << "," << m.value << '\n';
+    }
+        cout << "Data sparad." << '\n';
 
 }
+
+void DataManager::Load_File() {
+    //Läser in fil
+    std::ifstream file("data.txt");
+
+    if (!file) {
+        cout << "Går ej att ladda in filen" << '\n';
+        return;
+        }
+    data.clear();
+    Measurement m;
+
+    while (getline(file, m.timestamp, ',') && file >> m.value) {
+        file.ignore();
+        data.push_back(m);
+    }
+    file.close();
+    cout << "Värdet" << data.size() << " lagrat" << '\n';
+}
+

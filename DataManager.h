@@ -22,6 +22,8 @@ class DataManager {
         void Sort_Func_Asc();
         void Sort_Func_Desc();
         void Search_Func();
+        void Save_File();
+        void Load_File();
     
 
 };
