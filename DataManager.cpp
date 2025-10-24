@@ -186,7 +186,7 @@ void DataManager::Load_File() {
     Measurement m;
 
     while (getline(file, m.timestamp, ',') && file >> m.value) {
-        file.ignore();
+        //file.ignore();
         data.push_back(m);
     }
     file.close();
