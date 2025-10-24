@@ -1,5 +1,7 @@
 # Assignment-2
-
+https://github.com/Hoaqim1/Assignment-2
+ASSIGNMENT 1 REPO WITH FULL README BELOW!
+https://github.com/Hoaqim1/Assignment-1---Programing
 
 How to compile:
 Download files
