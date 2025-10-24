@@ -17,3 +17,4 @@ Measure.h - Measurement structure is defined here, value + timestamp variables.
 Uses a vector that stores a value and a timestamp(Measurement).
 Saves and loads data to a txt file.
 Methods instead of functions that now work with a vector, no more 10 value limit.
+Header files instead of just forward declaration.
